@@ -1,6 +1,7 @@
 import html
 import os
 
+import modules.sd_models.checkpoint_info
 from modules import shared, ui_extra_networks, sd_models
 from modules.ui_extra_networks import quote_js
 
@@ -13,7 +14,7 @@ class ExtraNetworksPageCheckpoints(ui_extra_networks.ExtraNetworksPage):
         shared.refresh_checkpoints()
 
     def create_item(self, name, index=None):
-        checkpoint: sd_models.CheckpointInfo = sd_models.checkpoint_aliases.get(name)
+        checkpoint: modules.sd_models.checkpoint_info.CheckpointInfo = sd_models.checkpoint_aliases.get(name)
         path, ext = os.path.splitext(checkpoint.filename)
         return {
             "name": checkpoint.name_for_extra,

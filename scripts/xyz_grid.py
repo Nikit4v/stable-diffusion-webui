@@ -369,7 +369,7 @@ class SharedSettingsStackHelper(object):
     def __exit__(self, exc_type, exc_value, tb):
         opts.data["sd_vae"] = self.vae
         opts.data["uni_pc_order"] = self.uni_pc_order
-        modules.sd_models.reload_model_weights()
+        modules.sd_models.reload_model()
         modules.sd_vae.reload_vae_weights()
 
         opts.data["CLIP_stop_at_last_layers"] = self.CLIP_stop_at_last_layers

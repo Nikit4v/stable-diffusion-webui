@@ -190,7 +190,7 @@ class UiSettings:
             )
 
             reload_sd_model.click(
-                fn=sd_models.reload_model_weights,
+                fn=sd_models.reload_model,
                 inputs=[],
                 outputs=[]
             )
